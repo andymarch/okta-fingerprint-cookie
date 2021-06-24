@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant RO as Resource Owner<br/>(browser)
+    participant CA as Client App<br/>(yelp.com)
+    participant AS as Authorization Server<br/>(Google)
+    participant RS as Resource Server<br/>(Contacts API)
+    RO->>CA: 1. Click Login with Google
+    CA->>RO: 2. Redirect...
+    RO->>AS: 3. ...to Google Login
+    AS->>RO: 4. Returns Login Form
+    RO->>AS: 5. Submits Credentials
+    note right of AS: authenticate user
+    AS->>RO: 6. Redirect with code...
+    RO->>CA: 7. ...to App with code
+    CA->>AS: 8. Request Token
+    note over CA,AS: request includes:<br/>Client ID, Client Secret & code
+    note right of AS: validate:<br/>- Client ID<br/>- Client Secret<br/>- code
+    AS->>CA: 9. Return Token
+    CA->>RS: 10. API Request with Token
+    note right of RS: validate Token
+    RS->>CA: 11. API Response

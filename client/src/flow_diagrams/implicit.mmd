@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant CA as Client App<br/>(SPA in Browser)
+    participant AS as Authorization Server<br/>(Google)
+    participant RS as Resource Server<br/>(Contacts API)
+    loop 1. Login w/Google
+        CA->>CA: 2. Redirect...
+    end
+    CA->>AS: 3. ...to Google Login
+    AS->>CA: 4. Returns Login Form
+    CA->>AS: 5. Submits Credentials
+    note right of AS: authenticate user
+    AS->>CA: 6. Respond with TOKENS
+    CA->>RS: 7. API Request with Token
+    note right of RS: validate Token
+    RS->>CA: 8. API Response

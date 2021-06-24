@@ -1,0 +1,8 @@
+{
+  "name": "Okta OIDC with PKCE Example",
+  "description": "This app demonstrates integrating the okta-auth-js library with both implicit (less secure) and pkce (more secure) flows",
+  "repository": "https://github.com/oktadeveloper/okta-auth-js-pkce-example",
+  "keywords": ["oidc", "identity", "security", "authentication"],
+  "success_url": "/",
+  "addons": [ "okta" ]
+}
