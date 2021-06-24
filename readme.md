@@ -1,6 +1,6 @@
 # Okta with cookie fingerprinting
 
-This repo represents a implementation of the token sidejacking mitigation proposed by the (OWASP JWT cheatsheet)[https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.md#token-sidejacking].
+This repo represents a implementation of the token sidejacking mitigation proposed by the [OWASP JWT cheatsheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.md#token-sidejacking).
 
 This repo consists of three parts:
 * A client which is the SPA with which the user interacts.
@@ -24,10 +24,10 @@ This repo consists of three parts:
 
 You are now ready to test.
 
-* Open your browser to the SPA (localhost link)[http://localhost:8080]. 
+* Open your browser to the SPA [localhost link](http://localhost:8080). 
 * Select Profile (pkce), you will be redirect to Okta to login
 * When you are redirected back you will have a cookie of "__Secure-fingerprint" with the cleartext value set by the serverside
-* Copying the access token to your JWT parser of choice such as (token.dev)[https://token.dev/] you should see the claim of fingerprint.
+* Copying the access token to your JWT parser of choice such as [token.dev](https://token.dev/) you should see the claim of fingerprint.
 
 The the value in the token is the SHA256 hash of the cleartext in the cookie.
 
